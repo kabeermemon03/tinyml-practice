@@ -32,6 +32,11 @@ wheels/
 *.swp
 *.swo
 
+# Models
+*.h5
+*.tflite
+*.pb
+
 # OS
 .DS_Store
 Thumbs.db
