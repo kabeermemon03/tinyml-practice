@@ -2,7 +2,7 @@
 
 A professional repository dedicated to learning and implementing **Tiny Machine Learning (TinyML)** on resource-constrained devices. This project explores the intersection of machine learning and embedded systems, focusing on creating and deploying highly efficient models to microcontrollers.
 
-## �️ Project Goals
+## 🛠️ Project Goals
 - Understand the fundamentals of Machine Learning and Deep Learning.
 - Learn model optimization techniques (Quantization, Pruning).
 - Implement TensorFlow Lite Micro for embedded deployment.

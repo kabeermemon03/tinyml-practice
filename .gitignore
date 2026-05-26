@@ -36,6 +36,12 @@ wheels/
 *.h5
 *.tflite
 *.pb
+# Keep .keras models as requested for this project
+# !*.keras 
+
+# Datasets
+datasets/
+*.zip
 
 # OS
 .DS_Store
