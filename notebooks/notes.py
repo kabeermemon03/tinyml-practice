@@ -146,3 +146,136 @@
 # “Image manager for TensorFlow.”
 
 # =====================================================================
+
+
+# TensorFlow Datasets (TFDS) Summary
+
+# TensorFlow Datasets (TFDS) is a library that makes it easier to load and use datasets in TensorFlow. Instead of manually downloading ZIP files, organizing folders, and labeling images, TFDS automatically downloads, prepares, and formats datasets for training neural networks.
+
+# Previously, datasets like Horses vs Humans required images to be sorted into folders such as `horses/` and `humans/`. TensorFlow used these folder names as labels through `ImageDataGenerator`. While effective, this method required manual setup and specific folder structures.
+
+# With TFDS, datasets can be loaded directly using:
+
+# ```python
+# import tensorflow_datasets as tfds
+
+# data = tfds.load("fashion_mnist")
+# ```
+
+# TFDS supports many types of datasets including images, text, audio, and video.
+
+# Important concepts in TFDS include:
+
+# * **Splits API**: divides data into training, validation, and testing sets.
+# * **Mapping Functions**: apply preprocessing or augmentation to every image.
+
+# Example augmentation workflow:
+
+# ```python
+# def augmentimages(image, label):
+#     image = tf.cast(image, tf.float32)
+#     image = image / 255
+#     image = tf.image.random_flip_left_right(image)
+#     return image, label
+
+# data = tfds.load('horses_or_humans', split='train', as_supervised=True)
+
+# train = data.map(augmentimages)
+# ```
+
+# Key ideas:
+
+# * `split='train'` loads the training data.
+# * `as_supervised=True` returns data as `(image, label)` pairs.
+# * `map()` applies a function to every image.
+# * Dividing by 255 normalizes pixel values from 0–255 to 0–1.
+# * Image augmentation improves model performance by creating modified versions of images.
+
+# TFDS simplifies data handling and preprocessing, making it easier to train machine learning and TinyML models efficiently.
+
+
+# ========================================================================
+
+# train = data.map(augmentimages)
+
+# means:
+
+# Take every image
+# Send it into augmentimages()
+# Return modified image
+
+
+
+# ==============================================================================
+
+
+# PART 7 — What is augmentation?
+
+# Augmentation =
+
+# artificially changing images to improve learning.
+
+# Examples:
+
+# flip image
+# rotate image
+# zoom
+# brightness change
+
+# Why?
+
+# Because it helps AI generalize better.
+
+# PART 8 — This function explained line-by-line
+
+# They wrote:
+
+# def augmentimages(image, label):
+
+# This creates a function.
+
+# Inputs:
+
+# image
+# label
+
+# =====================================================================
+
+# PART 9 — Random flip
+# image = tf.image.random_flip_left_right(image)
+
+# This randomly flips images horizontally.
+
+# Example:
+
+# Original:
+# 🐴 →
+
+# Flipped:
+# ← 🐴
+
+# This creates more training examples automatically.
+
+# ================================================================
+
+# ```python
+# data = tfds.load(
+#     'horses_or_humans',
+#     split='train',
+#     as_supervised=True
+# )
+# ```
+
+### Explanation
+
+# * `tfds.load()` → loads and prepares a dataset using TensorFlow Datasets (TFDS).
+# * `'horses_or_humans'` → specifies the dataset name.
+# * `split='train'` → loads only the training portion of the dataset.
+# * `as_supervised=True` → returns data as `(image, label)` pairs instead of dictionary format MUCH EASIER FOR THE MACHINE TO UNDERSTAND.
+
+# ### Output
+
+# The variable `data` contains a TensorFlow dataset of horse and human images with their labels, ready for preprocessing and training.
+
+# =====================================================================
+
