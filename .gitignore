@@ -1,10 +1,13 @@
-# Virtual Environment
+# --- Virtual Environments ---
 venv/
 ENV/
 env/
 .env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Python
+# --- Python ---
 __pycache__/
 *.py[cod]
 *$py.class
@@ -25,24 +28,70 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
+.cache
+.pytest_cache/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.log
 
-# IDEs
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.sublime-project
+*.sublime-workspace
+
+# --- IDEs & Editors ---
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
+.history/
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+.vs/
+*.user
+*.suo
+*.sln
+*.vssscc
 
-# Models
+# --- Models & ML ---
 *.h5
 *.tflite
 *.pb
-# Keep .keras models as requested for this project
+*.onnx
+*.weights
+*.pt
+*.pth
+# Keep .keras models as they are preferred for this project
 # !*.keras 
 
-# Datasets
+# --- Datasets ---
 datasets/
+data/
 *.zip
+*.tar.gz
+*.7z
+*.rar
+*.csv
+*.tsv
 
-# OS
+# --- OS Specific ---
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
