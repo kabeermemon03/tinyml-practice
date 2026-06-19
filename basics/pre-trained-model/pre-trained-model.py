@@ -1,9 +1,9 @@
 import tensorflow.compat.v1 as tf
 import sys
-from IPython.display import HTML,Audio
-sys.path.append("/content/tensorflow/tensorflow/examples/speech_commands/")
-import input_data
-import models
+# from IPython.display import HTML,Audio  # Colab-only
+# sys.path.append("/content/tensorflow/tensorflow/examples/speech_commands/")  # Colab-only
+# import input_data  # Colab-only
+# import models  # Colab-only
 import numpy as np 
 import pickle
 import os
@@ -29,8 +29,7 @@ TRAIN_DIR = 'train/' # for training checkpoints and other files.
 
 # Constants for inference directories and filepaths
 MODELS_DIR = 'models/speech-commands'
-if not os.path.exists(MODELS_DIR):
-  os.mkdir(MODELS_DIR)
+os.makedirs(MODELS_DIR, exist_ok=True)
 MODEL_TF = os.path.join(MODELS_DIR, 'model.pb')
 MODEL_TFLITE = os.path.join(MODELS_DIR, 'model.tflite')
 FLOAT_MODEL_TFLITE = os.path.join(MODELS_DIR, 'float_model.tflite')
@@ -88,7 +87,7 @@ with tf.Session() as sess:
                                          'testing',
                                           sess)
       flattened_data = np.array(data.flatten(), dtype=np.float32).reshape(1, 1960)
-      yeild [flattened_data]
+      yield [flattened_data]
 
       converter.representative_dataset = representative_dataset_gen
       tflite_model = converter.convert()

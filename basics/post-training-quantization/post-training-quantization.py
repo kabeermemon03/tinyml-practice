@@ -1,8 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import pprint
-import re
-import sys
 import tensorflow as tf
 import logging
 logging.getLogger("tensorflow").setLevel(logging.DEBUG)
