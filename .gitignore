@@ -66,15 +66,15 @@ coverage.xml
 *.vssscc
 
 # --- Models & ML ---
-*.h5
-*.tflite
-*.pb
-*.onnx
-*.weights
-*.pt
-*.pth
-# Keep .keras models as they are preferred for this project
-# !*.keras 
+# Model files are tracked intentionally for open-source visibility
+# *.h5
+# *.tflite
+# *.pb
+# *.onnx
+# *.weights
+# *.pt
+# *.pth
+# *.keras
 
 # --- Datasets ---
 datasets/
