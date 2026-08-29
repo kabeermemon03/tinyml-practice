@@ -76,7 +76,7 @@ coverage.xml
 # *.pth
 # *.keras
 
-# --- Datasets ---
+# --- Datasets & Analysis Artifacts ---
 datasets/
 data/
 *.zip
@@ -85,6 +85,7 @@ data/
 *.rar
 *.csv
 *.tsv
+*.npy
 
 # --- OS Specific ---
 .DS_Store

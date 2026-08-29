@@ -14,13 +14,14 @@ A professional repository dedicated to learning and implementing **Tiny Machine 
 
 | Directory | Description |
 | :--- | :--- |
-| **[basics/](file:///b:/tinyml-practice/basics)** | Fundamental ML concepts, simple models, and manual implementations. |
-| **[tensorflow-lite/](file:///b:/tinyml-practice/tensorflow-lite)** | TFLite Micro implementations and model conversion workflows. |
-| **[edge-ai-projects/](file:///b:/tinyml-practice/edge-ai-projects)** | Production-ready Edge AI applications and prototypes. |
-| **[datasets/](file:///b:/tinyml-practice/datasets)** | Curated datasets optimized for small-scale model training. |
-| **[notebooks/](file:///b:/tinyml-practice/notebooks)** | Interactive Jupyter notebooks for experimentation and training. |
-| **[microcontroller-deployment/](file:///b:/tinyml-practice/microcontroller-deployment)** | MCU-specific code (ESP32, STM32, Arduino) for model execution. |
-| **[docs/](file:///b:/tinyml-practice/docs)** | Research notes, tutorials, and deep-dives into TinyML topics. |
+| **[basics/](basics)** | Fundamental ML concepts, simple models, and manual implementations. |
+| **[tensorflow-lite/](tensorflow-lite)** | TFLite Micro implementations and model conversion workflows. |
+| **[GridGaurd_TinyML/](GridGaurd_TinyML)** | End-to-end temperature anomaly detection project (data → training → TFLite → INT8 deployment). |
+| **[datasets/](datasets)** | Curated datasets optimized for small-scale model training. |
+| **[notebooks/](notebooks)** | Notes and experimentation for model training. |
+| **[models/](models)** | Trained models, TFLite files, and evaluation artifacts. |
+| **[microcontroller-deployment/](microcontroller-deployment)** | MCU-specific code (ESP32, STM32, Arduino) for model execution. |
+| **[docs/](docs)** | Research notes, tutorials, and deep-dives into TinyML topics. |
 
 ---
 
@@ -53,9 +54,23 @@ pip install -r requirements.txt
 
 ## 🧪 Current Progress
 
+### GridGuard AI - Temperature Anomaly Detection
+An end-to-end TinyML project that detects abnormal temperature patterns (overheating grid / industrial equipment) and prepares a model for microcontroller deployment:
+
+1. **`scripts/generate_dataset.py`** - Generates a synthetic labelled temperature dataset (normal vs. anomaly windows).
+2. **`scripts/prepare_data.py`** - Splits the data (70/15/15), standardizes it, and caches it as NumPy arrays.
+3. **`scripts/train_model.py`** - Trains a small MLP classifier (20 inputs → 32 → 16 → 1) with early stopping.
+4. **`scripts/convert_tflite.py`** - Exports a **float32** TensorFlow Lite model.
+5. **`scripts/quantize_int8.py`** - Applies **full INT8 post-training quantization** for MCU deployment.
+6. **`scripts/validate_tflite.py` / `scripts/validate_int8.py`** - Verify the converted models against the Keras baseline.
+
+All settings (paths, window size, thresholds) live in a single **`config.py`**, so every script works regardless of where the repository is checked out.
+
 ### Basics
-- **MNIST Classification**: A simple dense neural network for digit recognition.
-- **Manual Convolutions**: Understanding the math behind CNNs by implementing image filters from scratch.
+- **CNN Edge Detection Visualization**: Understanding the math behind CNNs by implementing image filters from scratch.
+- **Fashion MNIST CNN**: Image classification using convolutional neural networks.
+- **Horses vs Humans**: Data augmentation, TFDS, and CNN training.
+- **Post-Training Quantization**: Shrinking models for on-device inference.
 
 ---
 
