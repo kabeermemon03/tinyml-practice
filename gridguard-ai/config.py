@@ -39,7 +39,7 @@ SCALER_SCALE_FILE = DATA_DIR / "scaler_scale.npy"
 # ------------------------------------------------------------------
 KERAS_MODEL_FILE = MODEL_DIR / "gridguard_model_v1.keras"
 TFLITE_FLOAT32_FILE = MODEL_DIR / "gridguard_model_v1_float32.tflite"
-TFLITE_INT8_FILE = MODEL_DIR / "gridguard_model_v1_int8.tflite"
+TFLITE_INT8_FILE = MODEL_DIR / "anomaly_model.tflite"
 
 # Evaluation artifacts
 CONFUSION_MATRIX_FILE = MODEL_DIR / "model1_confusion_matrix.png"
