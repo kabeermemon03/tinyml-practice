@@ -1,0 +1,163 @@
+{
+  "model_file": "models/gridguard_v2_int8.tflite",
+  "model_size_bytes": 8912,
+  "float_model_size_bytes": 16644,
+  "input": {
+    "shape": [
+      1,
+      40
+    ],
+    "dtype": "<class 'numpy.int8'>",
+    "scale": 0.019969075918197632,
+    "zero_point": -11,
+    "name": "serving_default_input:0"
+  },
+  "output": {
+    "shape": [
+      1,
+      5
+    ],
+    "dtype": "<class 'numpy.int8'>",
+    "scale": 0.00390625,
+    "zero_point": -128,
+    "name": "StatefulPartitionedCall_1:0"
+  },
+  "all_tensors": [
+    {
+      "name": "serving_default_input:0",
+      "shape": [
+        1,
+        40
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": 0.019969075918197632,
+      "zero_point": -11
+    },
+    {
+      "name": "functional_1/output_1/BiasAdd",
+      "shape": [
+        5
+      ],
+      "dtype": "<class 'numpy.int32'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/output_1/MatMul",
+      "shape": [
+        5,
+        12
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/dense_2_1/Relu;functional_1/dense_2_1/BiasAdd",
+      "shape": [
+        12
+      ],
+      "dtype": "<class 'numpy.int32'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/dense_2_1/MatMul",
+      "shape": [
+        12,
+        24
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/dense_1_2/Relu;functional_1/dense_1_2/BiasAdd",
+      "shape": [
+        24
+      ],
+      "dtype": "<class 'numpy.int32'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/dense_1_2/MatMul",
+      "shape": [
+        24,
+        48
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/dense_1/Relu;functional_1/dense_1/BiasAdd",
+      "shape": [
+        48
+      ],
+      "dtype": "<class 'numpy.int32'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/dense_1/MatMul",
+      "shape": [
+        48,
+        40
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": null,
+      "zero_point": 0
+    },
+    {
+      "name": "functional_1/dense_1/MatMul;functional_1/dense_1/Relu;functional_1/dense_1/BiasAdd",
+      "shape": [
+        1,
+        48
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": 0.012873035855591297,
+      "zero_point": -128
+    },
+    {
+      "name": "functional_1/dense_1_2/MatMul;functional_1/dense_1_2/Relu;functional_1/dense_1_2/BiasAdd",
+      "shape": [
+        1,
+        24
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": 0.04681422933936119,
+      "zero_point": -128
+    },
+    {
+      "name": "functional_1/dense_2_1/MatMul;functional_1/dense_2_1/Relu;functional_1/dense_2_1/BiasAdd",
+      "shape": [
+        1,
+        12
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": 0.18248921632766724,
+      "zero_point": -128
+    },
+    {
+      "name": "functional_1/output_1/MatMul;functional_1/output_1/BiasAdd",
+      "shape": [
+        1,
+        5
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": 0.6703327894210815,
+      "zero_point": 16
+    },
+    {
+      "name": "StatefulPartitionedCall_1:0",
+      "shape": [
+        1,
+        5
+      ],
+      "dtype": "<class 'numpy.int8'>",
+      "scale": 0.00390625,
+      "zero_point": -128
+    }
+  ]
+}
