@@ -55,6 +55,7 @@ The complete TinyML workflow—from dataset generation and preprocessing to Tens
 | **gridguard-ai/** | GridGuard AI v1 - temperature anomaly detection (data → training → TFLite → INT8 deployment) |
 | **gridguard-ai-v2/** | GridGuard AI v2 - ESP32-S3 temperature classification with INT8 quantization |
 | **gridguard-fire-ai/** | GridGuard Fire AI - fire vs no-fire image classification CNN (ESP32-CAM) |
+| **edge-ai-projects/** | Complete TinyML applications and projects |
 | **datasets/** | Datasets used for training TinyML models |
 | **notebooks/** | Jupyter notebooks for experimentation |
 | **models/** | Trained models, TFLite files and evaluation artifacts |
